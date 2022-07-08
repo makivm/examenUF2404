@@ -67,15 +67,20 @@ public class Hora {
 		}else mediaNoche();
 	}
 
+	//Metodo toString
 	@Override
 	public String toString() {
 		return String.format("%02d:%02d:%02d",horas,minutos,segundos);
 	}
 
+	
+	//Metodo que convierte hora hh:mm:ss a segundos
 	public int aSegundos() {
 		return (horas*60*60)+(minutos*60)+(segundos);
 	}
 	
+	
+	//Metodo que convierte n.segundos en hora hh:mm:ss
 	public void deSegundos(int seg) {
 	
         int h=seg/3600;
@@ -91,6 +96,8 @@ public class Hora {
         //System.out.println(h+"h "+min+"m "+s+"s");
 	}
 	
+	
+	//Metodo que calcula diferencia dos horas
 	public int segundosEntre(Hora h) {
 		return Math.abs((this.aSegundos()-h.aSegundos()));
 	}
